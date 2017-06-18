@@ -1,0 +1,2 @@
+cp dream /usr/local/bin/dream
+cp bootstrap.scm /usr/local/bin/bootstrap.scm

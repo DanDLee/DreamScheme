@@ -1,0 +1,37 @@
+The Linux version is an ELF executable and uses the Linux syscalls directly.
+In 'make.scm' define WINDOWS #f to make this version.
+'dream' expects bootstrap.scm to exist in the /usr/local/bin/ directory.
+Use './install' as root to install both dream and bootstrap.scm there.
+'dream' optionally accepts scheme filename arguments to load.
+-------------------------------------------------------------------------------
+Make with 'dream make.scm'.
+Test with './dream r4rstest.scm'.
+-------------------------------------------------------------------------------
+Additional non-standard procedures include:
+-------------------------------------------------------------------------------
+(sys-exit [INTEGER])
+(sys-fork)                                       ==> INTEGER
+(sys-read INPUT_PORT STRING INTEGER)             ==> INTEGER
+(sys-write OUTPUT_PORT STRING INTEGER)           ==> INTEGER
+(sys-open STRING INTEGER INTEGER)                ==> INTEGER
+(sys-close INTEGER)                              ==> INTEGER
+(sys-waitpid INTEGER ADDRESS INTEGER)            ==> INTEGER
+(sys-creat STRING INTEGER)                       ==> INTEGER
+(sys-link STRING STRING)                         ==> INTEGER
+(sys-unlink STRING)                              ==> INTEGER
+(sys-chdir STRING)                               ==> INTEGER
+(sys-time ADDRESS)                               ==> INTEGER
+(sys-mknod STRING INTEGER INTEGER)               ==> INTEGER
+(sys-chmod STRING INTEGER)                       ==> INTEGER
+(sys-lchown STRING INTEGER INTEGER)              ==> INTEGER
+(sys-lseek INTEGER INTEGER INTEGER)              ==> INTEGER
+(sys-getpid)                                     ==> INTEGER
+(sys-mount STRING STRING STRING INTEGER INTEGER) ==> INTEGER
+(sys-umount STRING)                              ==> INTEGER
+(sys-setuid INTEGER)                             ==> INTEGER
+(sys-getuid)                                     ==> INTEGER
+(sys-stime ADDRESS)                              ==> INTEGER
+(sys-ptrace INTEGER INTEGER INTEGER INTEGER)     ==> INTEGER
+(sys-alarm INTEGER)                              ==> INTEGER
+(sys-pause)                                      ==> INTEGER
+-------------------------------------------------------------------------------

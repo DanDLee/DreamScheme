@@ -1,0 +1,11 @@
+The Windows version is a PE executable and uses KERNEL32.dll.
+In 'make.scm' define WINDOWS #t to make this version.
+'dream.exe' expects bootstrap.scm to exist in the 'C:/dream/' directory.
+-------------------------------------------------------------------------------
+Make with 'dream make.scm'.
+Test with 'dream r4rstest.scm'.
+-------------------------------------------------------------------------------
+Additional non-standard procedures include:
+-------------------------------------------------------------------------------
+(get-module-handle STRING)                     ==> INTEGER ;;GetModuleHandleA
+-------------------------------------------------------------------------------

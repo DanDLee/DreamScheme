@@ -1,0 +1,70 @@
+;;;;;;;;;
+;;;BSS;;;
+;;;;;;;;;
+(align 4)
+(: 'bss_start)
+(bss 'interaction_environment 4)
+(bss 'current_input_port 4)
+(bss 'current_output_port 4)
+(bss 'tower_procedures 4)
+(bss 'backup 4)
+
+(bss 'obhash (* 128 (power 2 HASHPOWER)))
+(: 'obhash_end)
+(bss 'freestring 4)
+(bss 'freedict 4)
+(bss 'freedictend 4)
+(bss 'chararray (* 256 4))
+(bss 'symbols (* SYMSIZE 1024))
+(: 'first_formal)
+(bss 'output 255)
+(bss 'outputend 1)
+(bss 'stackbase 4)
+(bss 'thunk 4)
+(bss 'error_continuation 4)
+(bss 'io_file 4)
+(bss 'bytes_io 4)
+(bss 'str_len 4)
+(bss 'input 4)
+(bss 'backup_char 4)
+(bss 'load_line 4)
+(bss 'load_filename 4)
+(bss 'data_index 4)
+(bss 'lambda_list 4)
+
+(align 8)
+(bss 'mem1 (* MEMSIZE 1024))
+(bss 'memlimit1 (* 32 4))
+
+(align 8)
+(bss 'mem2 (* MEMSIZE 1024))
+(bss 'memlimit2 (* 32 4))
+
+(bss 'memstr1 (* STRSIZE 1024))
+(bss 'memstrlimit1 16)
+
+(bss 'memstr2 (* STRSIZE 1024))
+(bss 'memstrlimit2 16)
+
+(bss 'dictionary (* DICTSIZE 1024))
+(bss 'dictionarylimit 16)
+
+(bss 'gmp 4)
+(bss 'mpn_add 4)
+(bss 'mpn_sub 4)
+(bss 'mpn_mul 4)
+(bss 'mpn_divrem 4)
+(bss 'mpn_gcd 4)
+(bss 'src1size 4)
+(bss 'src2size 4)
+
+(if LIBFCGI
+ (begin
+  (bss 'fcgi 4)
+  (bss 'FCGX_Finish 4)
+  (bss 'FCGX_GetChar 4)
+  (bss 'FCGX_PutChar 4)
+  (bss 'FCGX_PutStr 4)
+  (bss 'FCGX_Accept 4)
+  (bss 'FCGX_GetParam 4)
+  (bss 'FCGX_FFlush 4)))
