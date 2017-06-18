@@ -1,4 +1,4 @@
-#Dream Scheme Interpreter
+# Dream Scheme Interpreter
 
 This program is distributed under the terms of the GNU General Public License.
 Copyright (C) 2011 David Joseph Stith
@@ -22,7 +22,7 @@ rationalize exp log tan asin acos atan
 values call-with-values dynamic-wind
 char-ready? 
 
-###Additional non-standard procedures include:
+### Additional non-standard procedures include:
 
 ```
 (macro FORMALS . BODY)  ==> MACRO
